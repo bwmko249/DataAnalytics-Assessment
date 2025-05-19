@@ -14,9 +14,9 @@
 ## Question 1: Customer Plans & Deposits
 
 **Approach:**
-- Use `users_customuser` as the primary table to list all customers.
-- Calculate `savings_count`: A distinct count of regular savings plans (`is_regular_savings = 1`) by joining `plans_plan` with `savings_savingsaccount`.
-- Calculate `investment_count`: similarly count fixed investment plans (`is_fixed_investment = 1`).
+- The `users_customuser` is the primary table to list all customers.
+- **Calculate `savings_count`:** A distinct count of regular savings plans (`is_regular_savings = 1`) by joining `plans_plan` with `savings_savingsaccount`.
+- **Calculate `investment_count`:** similarly count fixed investment plans (`is_fixed_investment = 1`).
 - **Summing Deposits:** aggregate total deposit amounts from `savings_savingsaccount.amount`, using `COALESCE` to handle nulls.
 - **Filtering:** A `HAVING` clause was used to ensure each customer has at least one savings plan and one investment plan.
 
